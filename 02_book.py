@@ -16,20 +16,29 @@ b3 = Book('Apples, how you like them?', 'stan simpson', 'food')
 b4 = Book('Just Do It', 'shia le boeuf', 'inspirational')
 b5 = Book('What is this code anyway', 'tom jones', 'programming')
 
+books = [b1, b2, b3, b4, b5]
 
 # lets get sorting some books
 def in_sort(books):
     # loop through len - 1 elements
+    for i in range(1, len(books)):
         # code up some logic
         # save current i to a temp var
+        temp = books[i]
+        j = i
+        pass
  
         # iterate over books looking for title
+        while j > 0 and temp.title < books[j - 1].title:
             # shift left until correct tile is found
-       
+            books[j] = books[j - 1]
+            # decrement j
+            j -= 1
         # insert book in correct position
+        books[j] = temp
 
     # return books
-    pass
+    return books
 
 # for b in books:
 #     print(b)
@@ -57,27 +66,34 @@ def in_sort(books):
 
 def in_sort2(lst):
     # loop over n - 1 elements
+    for i in range(1, len(lst)):
         # save initial element to temp variable
+        temp = lst[i]
         # set inner loop index to current index
+        j = i
         # inner loop
+        while j > 0 and temp < lst[j - 1]:
             # shift left until correct position found
+            lst[j] = lst[j - 1]
             # decrement inner index
+            j -= 1
         # insert temp at correct position
+        lst[j] = temp
     # return our list
-    pass
+    return lst
 
 
-# my_nums = [23, 34, 60, 1, 4, 5, 2]
-# my_names = ['Dave', 'Steve', 'Bob']
+my_nums = [23, 34, 60, 1, 4, 5, 2]
+my_names = ['Dave', 'Steve', 'Bob']
 
-# print(my_nums)
+print(my_nums)
 
-# in_sort2(my_nums)
+in_sort2(my_nums)
 
-# print(my_nums)
+print(my_nums)
 
-# print(my_names)
+print(my_names)
 
-# in_sort2(my_names)
+in_sort2(my_names)
 
-# print(my_names)
+print(my_names)
